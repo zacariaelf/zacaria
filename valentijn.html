@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Wil je mijn Valentijn zijn?</title>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+
+(function(){
+    emailjs.init("JOUW_PUBLIC_KEY"); 
+})();
+</script>
+
+<style>
+body { background:pink; text-align:center; font-family:Arial; padding-top:50px; }
+button { padding:15px 40px; font-size:20px; border-radius:10px; border:none; cursor:pointer; }
+#yes { background:red; color:white; }
+#no { background:gray; color:white; }
+</style>
+</head>
+
+<body>
+
+<h1>Wil je mijn Valentijn zijn? 💘</h1>
+
+<img src="media/FOTO1.jpeg" width="200">
+<img src="media/FOTO2.jpeg" width="200">
+<img src="media/FOTO3.jpeg" width="200">
+
+<br><br>
+
+<button id="yes">JA 😍</button>
+<button id="no">Nee 🙄</button>
+    <audio id="song">
+    <source src="media/liedje.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.getElementById("yes").onclick = function() {
+ document.getElementById("song").play();
+
+    // Hartjes effect
+    for(let i=0;i<30;i++){
+        let h=document.createElement("div");
+        h.innerHTML="❤️";
+        h.style.position="fixed";
+        h.style.left=Math.random()*100+"%";
+        h.style.bottom="0";
+        h.style.fontSize="30px";
+        h.style.animation="float 3s linear infinite";
+        document.body.appendChild(h);
+    }
+
+};
+</script>
+
+<style>
+@keyframes float {
+    from { bottom:0; opacity:1; }
+    to { bottom:100%; opacity:0; }
+}
+</style>
+
+</body>
+</html>
